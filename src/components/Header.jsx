@@ -17,7 +17,7 @@ const Header = () => {
       </Logo>
       <NavMenu>
         {NavItem.map((item) => (
-          <a href={item.href}>
+          <a key={item.name} href={item.href}>
             <img src={item.icon} alt={item.name} />
             <span>{item.name}</span>
           </a>
