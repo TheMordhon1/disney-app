@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <Nav>
       <Logo>
-        <img src="/images/logo.svg" alt="logo" />
+        <img src="/images/disney-hotstar-logo-dark.svg" alt="logo" />
       </Logo>
       <NavMenu>
         {NavItem.map((item) => (
@@ -45,9 +45,9 @@ const Nav = styled.nav`
 
 const Logo = styled.a`
   padding: 0;
-  width: 80px;
+  width: 120px;
   margin-top: 4px;
-  max-height: 70px;
+  max-height: 110px;
   display: inline-block;
 
   img {
