@@ -1,7 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { auth, provider } from "../firebase";
+import { signInWithPopup } from "firebase/auth";
 
 const Header = () => {
+  const handleAuth = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
   const NavItem = [
     { href: "#", icon: "/images/home-icon.svg", name: "home" },
     { href: "#", icon: "/images/search-icon.svg", name: "search" },
@@ -23,7 +35,7 @@ const Header = () => {
           </a>
         ))}
       </NavMenu>
-      <Login>Login</Login>
+      <Login onClick={handleAuth}>Login</Login>
     </Nav>
   );
 };
@@ -130,6 +142,7 @@ const Login = styled.a`
   border: 1px solid #f9f9f9;
   border-radius: 5px;
   transition: all 0.2s ease 0s;
+  cursor: pointer;
 
   &:hover {
     background-color: #ffffff;
